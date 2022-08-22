@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Untitled</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <!-- Place favicon.ico in the root directory -->
+
+    </head>
+    <body>
+
+        <p>{{ codes }}</p>
+        <div class="parent">
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[0]}}"></div>
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[1]}}"></div>
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[2]}}"></div>
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[3]}}"></div>
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[4]}}"></div>
+        <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[5]}}"></div>
+        </div>
+
+    </body>
+</html>

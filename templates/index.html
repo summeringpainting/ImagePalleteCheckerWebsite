@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Image Colors</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mx-auto mt-5 text-center">
+                    <h1 class="mb-5">Image Palette Checker</h1>
+
+                    <form method="post" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+
+                        {% for error in form.photo.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                {{ form.photo(class="form-control") }}
+                            </div>
+                            <div class="col-auto">
+                                {{ form.submit(class="btn btn-success") }}
+                            </div>
+
+                        </div>
+                    </form>
+                    <div>
+                        <a href="{{ url_for('get_colors', filename=file_url.replace('/uploads/', '')) }}" class="codes">Color Codes</a>
+                    </div>
+                    {% if file_url %}
+                    <div class="mt-5">
+                        <img src="{{ file_url }}" style="width: 400px;">
+                    </div>
+                    {% endif %}
+                       <div>
+                        <div class="parent">
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[0]}}"></div>
+
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[1]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[2]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[3]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[4]}}"></div>
+                        </div>
+                        <div class="parent">
+
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[0]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[1]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[2]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[3]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[4]}}</p></div>
+                        </div>
+                        <div class="parent">
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[5]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[6]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[7]}}"></div>
+                            <div class="child" style="height: 100px;width: 100px;background-color: rgb{{codes[8]}}"></div>
+
+                        </div>
+                        <div class="parent">
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[5]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[6]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[7]}}</p></div>
+                            <div class="child" style="height: 100px;width: 100px;"><p>{{codes[8]}}</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

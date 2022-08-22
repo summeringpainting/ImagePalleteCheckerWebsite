@@ -1,0 +1,23 @@
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.child {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mt-5 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.btn {
+    margin: 10px;
+}
